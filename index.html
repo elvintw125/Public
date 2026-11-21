@@ -10,18 +10,17 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
 <style>
 :root{--bg:#0e1026;--ink:#f1ecdf;--teal:#38e0c8;--pink:#ff4f8b;--gold:#ffc83d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html,body{min-height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overscroll-behavior:none}
-body{display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
-#wrap{--vh:calc(100vh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));position:relative;flex:none;height:var(--vh);width:min(100vw,calc(var(--vh)*2/3))}
-@supports(height:100dvh){#wrap{--vh:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;overscroll-behavior:none}
+#wrap{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(100vw,66.6667vh);height:100%;overflow:hidden}
+@supports(height:100dvh){#wrap{width:min(100vw,66.6667dvh)}}
 canvas{touch-action:none}
 canvas{width:100%;height:100%;display:block;background:#0b0d20;cursor:crosshair}
-#ui{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(11,13,32,.82);padding:24px}
+#ui{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(11,13,32,.82);padding:24px}
 #ui.hide{display:none}
 #sel{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:22em;margin-top:8px}
 #sel button{margin:0;font-size:14px;padding:6px 12px;background:#2a2e55;min-width:40px}
 #sel button:disabled{opacity:.35;cursor:default}
-#pick,#shop{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(11,13,32,.92);padding:20px;overflow:auto}
+#pick,#shop{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(11,13,32,.92);padding:20px;overflow:auto}
 #pick.hide,#shop.hide{display:none}
 h2{margin:0 0 10px;color:var(--teal)}
 .card{display:block;width:min(320px,86%);margin:6px 0;padding:10px 14px;text-align:left;background:#1b1f45;border:2px solid #38406f;border-radius:8px;color:var(--ink);font-size:15px;font-weight:400}
@@ -32,7 +31,7 @@ h2{margin:0 0 10px;color:var(--teal)}
 .row b{color:var(--gold);font-size:15px}
 .row button{margin:0;font-size:13px;padding:6px 10px;white-space:nowrap}
 .row button:disabled{opacity:.4;cursor:default}
-#hub{position:absolute;inset:0;display:flex;flex-direction:column;background:linear-gradient(#0e1026,#0b0d20);z-index:5}
+#hub{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;background:linear-gradient(#0e1026,#0b0d20);z-index:5}
 #hub.hide{display:none}
 #hh{display:flex;justify-content:space-between;padding:12px 16px;font-weight:700;color:var(--gold)}
 #hc{flex:1;overflow:auto;padding:4px 12px 16px;text-align:center;touch-action:pan-y}
@@ -43,7 +42,7 @@ h2{margin:0 0 10px;color:var(--teal)}
 .arr{width:48px;height:48px;border-radius:50%;margin:0!important;padding:0!important;font-size:18px!important;background:#2a2e55!important}
 .slot{flex:1;min-height:50px;border:2px dashed #38406f;border-radius:8px;font-size:13px;display:flex;align-items:center;justify-content:center;padding:4px;color:#6b749c}
 .slot.f{border-style:solid;border-color:var(--teal);color:var(--gold);cursor:pointer}
-#auth{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(#1b1f45,#0b0d20);padding:20px;text-align:center;overflow:auto}
+#auth{position:absolute;top:0;right:0;bottom:0;left:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#12153a;padding:20px;text-align:center;overflow:auto}
 #auth.hide{display:none}
 #auth input{width:min(280px,80%);padding:12px;margin:6px 0;border-radius:6px;border:2px solid #38406f;background:#0b0d20;color:var(--ink);font:inherit;font-size:16px}
 #auth input:focus-visible{outline:3px solid var(--gold)}
